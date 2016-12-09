@@ -56,11 +56,11 @@ public class MyView extends SurfaceView implements SurfaceHolder.Callback {
         //--------------------
         float prevX=cx+radius;
         float prevY=cy;
-        for (int alpha=0; alpha<500; alpha+=5){
-            float x = radius * (float) Math.cos(Math.toRadians(alpha));
-            float y = radius * (float) Math.sin(Math.toRadians(alpha));
+        for (int alpha=0; alpha<=360; alpha+=5){
+            float x = cx + radius * (float) Math.cos(Math.toRadians(alpha));
+            float y = cy + radius * (float) Math.sin(Math.toRadians(alpha));
 
-            canvas.drawLine(cx+prevX, cy+prevY, cx+x, cy+y, paint);
+            canvas.drawLine(prevX, prevY, x, y, paint);
             prevX=x;
             prevY=y;
 
